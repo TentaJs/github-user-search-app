@@ -14,7 +14,7 @@ export const Search = ({hasError, onSumbit}: SearchProps) => {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault()
         const text = searchRef.current ? searchRef.current.value : ""
-        if (text) {
+        if (text.trim()) {
             onSumbit(text)
             if (searchRef.current){
                 searchRef.current.value = ""
